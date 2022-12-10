@@ -31,3 +31,36 @@ Output:
 1
 15
 */
+
+#include<bits/stdc++.h>
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+    long long r,c;
+    long long ans = 0;
+    while(t--){
+        cin>>r>>c;
+        if(c > r){//if col is greater than row => ans = (col-1)*col+row
+            if(c % 2 != 0){//if col is odd no
+                ans = (c*c)-r+1;
+            }
+            else{// if col is even no
+                ans = ((c-1)*(c-1))+r;
+            }
+            cout<<ans<<endl;
+        }
+        else{
+            if(r % 2 == 0){
+                ans = (r*r)-c+1;
+            }
+            else{
+                ans = ((r-1)*(r-1))+c;
+            }
+            cout<<ans<<endl;
+        }
+    }
+}
